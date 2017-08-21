@@ -25,7 +25,14 @@ def fibonacci(max_n):
 def even_fibonacci(max_num):
     """return a list consist of even fibonacci below max_num"""
     fib_list = fibonacci(max_num)
-    return [i for i in fib_list if i % 2 == 0]
+    even_dib_list = []
+
+    for i in fib_list:
+        if i % 2 == 0:
+            print "even fibonacci number: {}".format(i)
+            even_dib_list.append(i)
+
+    return even_dib_list
 
 
 def prime(n):
@@ -112,6 +119,7 @@ def prime_factor(n):
             i += 1
         elif prime_v3(i) and rest % i == 0:
             prime_fac_list.append(i)
+            print "prime factor of {} : {}".format(n, i)
             rest = rest / i
     return prime_fac_list
     # return max(prime_fac_list)
@@ -133,11 +141,15 @@ def largest_palindrome_product(n):
     max_n = int('9' * n)
 
     target_list = []
+    max_palin = 1
     for i in range(max_n, 0, -1):
         for j in range(max_n, 0, -1):
             posedu_palindrome = i * j
             if palindrome(posedu_palindrome):
                 target_list.append(posedu_palindrome)
+                if posedu_palindrome > max_palin:
+                    print "palindrome:{} = {} * {}".format(posedu_palindrome, i, j)
+                    max_palin = posedu_palindrome
 
     return max(target_list)
 
@@ -165,10 +177,13 @@ def smallest_multiple(n):
 def sum_square_difference(n):
     """return square of sum MINUS sum of square for numbers from 1 to n"""
     sum_of_square = 0
+
     for i in range(n + 1):
         sum_of_square += i**2
+    print "sum of square from 1 to {} is {}".format(n, sum_of_square)
 
     square_of_sum = (sum(range(n + 1)))**2
+    print "square of sum from 1 to {} is {}".format(n, square_of_sum)
 
     return square_of_sum - sum_of_square
 
@@ -180,6 +195,7 @@ def the_n_th_prime(n):
     while True:
         if prime(x):
             count += 1
+            print "{}-th prime:{}".format(count, x)
         if prime(x) and count == n:
             return x
         x += 1
@@ -199,12 +215,15 @@ def self_product(n):
 
 def largest_product_in_series(series, loci_len):
     """for question 'largest product in a series' """
-    product_list = []
+    largest_product = 1
     for i in range(len(series) - loci_len):
         num = int(series[i:i + loci_len])
-        product_list.append(self_product(num))
+        product = self_product(num)
+        if product > largest_product:
+            largest_product = product
+            print "find product {} \t= self product of {}".format(largest_product, num)
 
-    return max(product_list)
+    return largest_product
 
 
 def special_pythagorean_triplet():
@@ -223,6 +242,7 @@ def summation_of_primes(max_n, min_n=2):
     while i < max_n:
         if prime_v3(i):
             sum_prime += i
+            print "add prime:{} sum = {}".format(i, sum_prime)
         i += 1
 
     return sum_prime
@@ -310,6 +330,7 @@ def longest_collatz_sequence(n):
         if len(i_seq) > longest_seq:
             longest_seq = len(i_seq)
             longest_seq_id = i
+            print "long collatz seq from {} has {} items: {} ... 1".format(longest_seq_id, longest_seq, i_seq[0:5])
         i += 1
 
     return longest_seq_id
