@@ -330,7 +330,7 @@ def longest_collatz_sequence(n):
         if len(i_seq) > longest_seq:
             longest_seq = len(i_seq)
             longest_seq_id = i
-            print "long collatz seq from {} has {} items: {} ... 1".format(longest_seq_id, longest_seq, i_seq[0:5])
+            print "collatz seq from {} has {} items: {} ... 1".format(longest_seq_id, longest_seq, i_seq[0:5])
         i += 1
 
     return longest_seq_id
