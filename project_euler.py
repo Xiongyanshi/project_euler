@@ -126,9 +126,10 @@ def prime_factor(n):
 
 
 def palindrome(n):
-    """Return True if n is a palindrome number, like 81133118"""
-    for i in range(len(str(n)) / 2):
-        if str(n)[i] != str(n)[-1 - i]:
+    """Return True if n is a palindrome, like 81133118, also works for string like"""
+    n = str(n)
+    for i in range(len(n) / 2):
+        if n[i] != n[-1 - i]:
             return False
     return True
 
