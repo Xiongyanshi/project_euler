@@ -92,7 +92,7 @@ def prime_below_max(max_num):
 def factors(n):
     """ return all factors of n into a list, including 1 and n """
     if n <= 0:
-        raise False
+        return False
     if n == 1:
         return [1, 1]
 
@@ -369,6 +369,40 @@ def amicable_numbers(n):
 
     return sum(amicable_list)
 
+def perfect_number(n):
+    """return true if n is a perfect number like 28, factor:1+2+4+7+14 = 28 """
+    factors_n = factors(n)
+    return sum(factors_n[:-1]) == n
+    
+
+def abundant_num(n):
+    """return true if n is a abundant number """
+    factors_n = factors(n)
+    return sum(factors_n[:-1]) > n
+
+
+def non_abundant_sum(n):
+
+    abundant_add_set = set()
+    abundant_list = []
+
+    for i in range(1, n):
+        if abundant_num(i):
+            abundant_list.append(i)
+    # print "abundant list: {}".format(abundant_list)
+
+    for j in range(1, n):
+        for abundant in abundant_list:
+            if (j - abundant in abundant_list):
+                abundant_add_set.add(j)
+                break
+    # print "abundant add set:{}".format(abundant_add_set)
+
+    non_abundant_add_set = set(range(1, n)) - abundant_add_set
+    print "non-abundant add set:", non_abundant_add_set
+
+    return sum(non_abundant_add_set)
+
 
 if __name__ == '__main__':
     print "--**--\nTo solve problems at Project Euler.\
@@ -388,12 +422,11 @@ problem 14: Longest Collatz sequence\n\
 problem 16: Power digit sum\n\
 problem 20: Factorial digit sum\n\
 problem 21: Amicable numbers\n\
+problem 23: Non-abundant sum\n\
 --"
     problem_index = input("input the problem number to test: ")
     print "--\nworking on problem: {}...\nResult:\n".format(problem_index)
 
-    target1 = 13195
-    target2 = 600851475143
 
     # <test longest_collatz_seq>:
     # pprint.pprint(longest_collatz_sequence(10**6))
@@ -403,7 +436,10 @@ problem 21: Amicable numbers\n\
     # print "{} grid {} ways".format(grid, lattice_move(grid, grid))
 
     # <test_3 largest prime factor>:
-    if problem_index == 21:
+    if problem_index == 23:
+        print non_abundant_sum(28124)
+        
+    elif problem_index == 21:
         n = 10000
         print "the sum of all the amicable numbers under {} \
 is: {}".format(n, amicable_numbers(n))
