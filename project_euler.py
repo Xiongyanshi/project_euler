@@ -369,11 +369,12 @@ def amicable_numbers(n):
 
     return sum(amicable_list)
 
+
 def perfect_number(n):
     """return true if n is a perfect number like 28, factor:1+2+4+7+14 = 28 """
     factors_n = factors(n)
     return sum(factors_n[:-1]) == n
-    
+
 
 def abundant_num(n):
     """return true if n is a abundant number """
@@ -404,6 +405,10 @@ def non_abundant_sum(n):
     return sum(non_abundant_add_set)
 
 
+def one_thousand_digit_fibonacci(n=1000):
+    max_search = 10**1000
+
+
 if __name__ == '__main__':
     print "--**--\nTo solve problems at Project Euler.\
 by Yanshi Xiong.\n--"
@@ -427,7 +432,6 @@ problem 23: Non-abundant sum\n\
     problem_index = input("input the problem number to test: ")
     print "--\nworking on problem: {}...\nResult:\n".format(problem_index)
 
-
     # <test longest_collatz_seq>:
     # pprint.pprint(longest_collatz_sequence(10**6))
 
@@ -438,7 +442,7 @@ problem 23: Non-abundant sum\n\
     # <test_3 largest prime factor>:
     if problem_index == 23:
         print non_abundant_sum(28124)
-        
+
     elif problem_index == 21:
         n = 10000
         print "the sum of all the amicable numbers under {} \
