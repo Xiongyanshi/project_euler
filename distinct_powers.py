@@ -3,6 +3,7 @@
 
 
 def distinct_powers():
+    """ problem 29 """
     min = 2
     max = 100
     power_set = set()
