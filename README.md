@@ -1,6 +1,6 @@
-#project_euler
+# project_euler
 my python practice code to solve problems on [Project Euler](https://projecteuler.net/archives)  
-##right now fixed:
+## right now fixed:
 >
 p001: Multiples of 3 and 5  
 p002: Even Fibonacci numbers  
