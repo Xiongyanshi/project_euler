@@ -1,6 +1,5 @@
 #project_euler  
-my python practice code to solve problems on Project Euler  
-https://projecteuler.net/archives 
+my python practice code to solve problems on [Project Euler](https://projecteuler.net/archives)  
 ##right now fixed:  
   
 >
