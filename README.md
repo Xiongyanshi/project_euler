@@ -4,7 +4,7 @@ my python practice code to solve problems on [Project Euler](https://projecteule
 >
 p001: Multiples of 3 and 5  
 p002: Even Fibonacci numbers  
-p003: Largest prime factor  s
+p003: Largest prime factors  
 p004: Largest palindrome product  
 p005: Smallest multiple  
 p006: Sum square difference  
