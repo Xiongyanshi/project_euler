@@ -4,7 +4,7 @@
 
 def pandigit(n, m=9):
     """Return True if n is a pandigit number of 1-9, like 918273645"""
-    return len(str(n)) == 9 and \
+    return len(str(n)) == m and \
         set([str(i) for i in range(1, m+1)]) == set(str(n))
 
 
