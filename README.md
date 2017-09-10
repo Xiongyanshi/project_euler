@@ -20,6 +20,7 @@ p023: Non-abundant sums
 p025: 1000-digit Fibonacci number  
 p029: Distinct powers  
 p030: Digit fifth powers  
+p032: Pandigital products  
 p034: Digit factorials  
 p035: Circular primes  
 p036: Double-base palindromes  
