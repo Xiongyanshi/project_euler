@@ -28,3 +28,5 @@ p037: Truncatable primes
 p038: pandigital multiples  
 p039: integer right triangles  
 p041: pandigital prime  
+p043: substring divisibility  
+p045: triangular, pentagonal, and hexagonal  
